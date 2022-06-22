@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\RangosFecha;
+use App\Models\Curso;
 use Illuminate\Http\Request;
 
-class RangosFechasController extends Controller
+class CursosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class RangosFechasController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\RangosFecha  $rangosFecha
+     * @param  \App\Models\Curso  $curso
      * @return \Illuminate\Http\Response
      */
-    public function show(RangosFecha $rangosFecha)
+    public function show(Curso $curso)
     {
         //
     }
@@ -43,10 +43,10 @@ class RangosFechasController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\RangosFecha  $rangosFecha
+     * @param  \App\Models\Curso  $curso
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RangosFecha $rangosFecha)
+    public function update(Request $request, Curso $curso)
     {
         //
     }
@@ -54,10 +54,10 @@ class RangosFechasController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\RangosFecha  $rangosFecha
+     * @param  \App\Models\Curso  $curso
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RangosFecha $rangosFecha)
+    public function destroy(Curso $curso)
     {
         //
     }

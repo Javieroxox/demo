@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{NinosController,EducadorasController,RangosController,EmergenciasRequest};
+use App\Http\Controllers\{NinosController,EducadorasController,RangosController,EmergenciasController,CursosController,EmergenciasFechasController};
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,4 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('/ninos',NinosController::class);
 Route::apiResource('/educadoras',EducadorasController::class);
 Route::apiResource('/rangos',RangosController::class);
-Route::apiResource('/emergencias',EmergenciasRequest::class);
+Route::apiResource('/emergencias',EmergenciasController::class);
+Route::apiResource('/cursos',CursosController::class);
+Route::apiResource('/emergenciasfechas',EmergenciasFechasController::class);
