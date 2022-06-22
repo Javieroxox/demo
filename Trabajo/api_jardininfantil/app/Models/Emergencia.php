@@ -10,7 +10,7 @@ class Emergencia extends Model
 {
     use HasFactory,SoftDeletes;
 
-    protected $table = 'rangos';
+    protected $table = 'emergencias';
     public $timestamps = false;
 
 }
