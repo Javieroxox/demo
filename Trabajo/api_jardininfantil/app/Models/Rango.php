@@ -14,11 +14,11 @@ class Rango extends Model
     public $timestamps = false;
 
     public function ninos(){
-        return $this->hasMany(Ninos::class);
-    } 
+        return $this->hasMany(Nino::class);
+    }
 
     public function educadoras(){
-        return $this->hasMany(Educadoras::class);
+        return $this->hasMany(Educadora::class);
     } 
 
 }

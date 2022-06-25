@@ -19,4 +19,8 @@ class Nino extends Model
     public function rango(){
         return $this->belongsto(Rango::class);
     }
+
+    public function emergencias(){
+        return $this->hasMany(Emergencia::class);
+    }
 }

@@ -14,10 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('emergencias', function (Blueprint $table) {
-            $table->string('id')->primary();             
+            $table->id();             
             $table->string('descripcion');
+            $table->date('fecha');
             $table->string('rut_niño');
-			$table->foreign('rut_niño')->references('rut')->on('niños');
+			$table->foreign('rut_niño')->references('rut')->on('ninos');
 			$table->softDeletes();
         });
     }

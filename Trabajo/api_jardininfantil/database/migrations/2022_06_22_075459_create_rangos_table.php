@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('rangos', function (Blueprint $table) {
-            $table->string('id');
+            $table->id();
             $table->string('nombre');
 			$table->softDeletes();
         });

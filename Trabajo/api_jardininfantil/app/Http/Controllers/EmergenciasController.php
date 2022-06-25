@@ -28,6 +28,7 @@ class EmergenciasController extends Controller
     {
         $emergencia = new Emergencia();
         $emergencia->descripcion=$request->descripcion;
+        $emergencia->fecha=$request->fecha;
         $emergencia->rut_nino=$request->rut_nino;
         $emergencia->save();
     }
