@@ -54,6 +54,7 @@ class EducadorasController extends Controller
      */
     public function update(Request $request, Educadora $educadora)
     {
+        $educadora->rut = $request->rut;
         $educadora->nombre=$request->nombre;
         $educadora->apellido=$request->apellido;
         $educadora->id_rango=$request->id_rango;

@@ -28,8 +28,6 @@ class RangosController extends Controller
     {
         $rango = new Rango();
         $rango->nombre=$request->nombre;
-        $rango->rut_nino=$request->rut_nino;
-        $rango->rut_educadora=$request->rut_educadora;
         $rango->save();
     }
 
@@ -54,8 +52,6 @@ class RangosController extends Controller
     public function update(Request $request, Rango $rango)
     {
         $rango->nombre=$request->nombre;
-        $rango->rut_nino=$request->rut_nino;
-        $rango->rut_educadora=$request->rut_educadora;
         $rango->save();
         return $rango;
     }

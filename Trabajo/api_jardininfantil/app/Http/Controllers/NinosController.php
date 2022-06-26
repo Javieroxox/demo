@@ -55,6 +55,7 @@ class NinosController extends Controller
      */
     public function update(NinosRequest $request, Nino $nino)
     {
+        $nino->rut = $request->rut;
         $nino->nombre=$request->nombre;
         $nino->apellido=$request->apellido;
         $nino->id_rango=$request->id_rango;

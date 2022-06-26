@@ -24,18 +24,13 @@ class RangosRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre'=>'required|alpha',
-            'rut_niño'=>'unique:rango,rut_niño',
-            'rut_educadora'=>'unique:rango,rut_educadora',
+            'nombre'=>'required',
         ];
     }
 
     public function messages()
     {   return [
         'nombre.required'=>'Ingrese el nombre del rango',
-        'nombre.alpha'=>'Ingreso un número en el nombre del rango',
-        'rut_niño.unique'=>'El rut del niño ya existe en la base de datos',
-        'rut_educadora.unique'=>'El rut de la tia ya existe en la base de datos',
     ];
     }
 }
