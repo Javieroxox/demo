@@ -96,6 +96,19 @@ class DatabaseSeeder extends Seeder
         }
 
         //emergencias
+        $emergencias = [
+            ['nombre'=>'Sala Cuna Menor'],
+            ['nombre'=>'Sala Cuna Mayor'],
+            ['nombre'=>'Nivel Medio Menor'],
+            ['nombre'=>'Nivel Medio Mayor'],
+            ['nombre'=>'Primer  Nivel de Transición'],
+            ['nombre'=>'Segundo Nivel de Transición'],
+        ];
 
+        foreach($emergencias as $emergencia){
+            DB::table('emergencias')->insert([
+                'nombre' => $rango['nombre'],
+            ]);
+        }
     }
 }

@@ -26,7 +26,6 @@ class EmergenciasRequest extends FormRequest
     {
         return [
             'descripcion'=>'required|alpha',
-            'rut_niño'=>'unique:rango,rut_niño',
         ];
     }
 
@@ -34,8 +33,6 @@ class EmergenciasRequest extends FormRequest
     {   return [
         'descripcion.required'=>'Ingrese el nombre del rango',
         'descripcion.alpha'=>'Ingreso un número en el nombre del rango',
-        'rut_niño.unique'=>'El rut del niño ya existe en la base de datos',
-        'rut_educadora.unique'=>'El rut de la tia ya existe en la base de datos',
     ];
     }
 }
