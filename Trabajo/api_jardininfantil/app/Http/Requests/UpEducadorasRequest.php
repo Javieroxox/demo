@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\DigitoVerificadorRut;
 use Illuminate\Validation\Rule;
 
-class EducadorasRequest extends FormRequest
+class UpEducadorasRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
