@@ -13,7 +13,7 @@ class Emergencia extends Model
     protected $table = 'emergencias';
     public $timestamps = false;
 
-    public function nino(){
-        return $this->belongsto(Nino::class);
-    }
+    //public function nino(){
+    //    return $this->belongsto(Nino::class);
+    //}
 }

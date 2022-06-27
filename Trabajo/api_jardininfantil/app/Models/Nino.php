@@ -20,7 +20,7 @@ class Nino extends Model
         return $this->belongsto(Rango::class);
     }
 
-    public function emergencias(){
-        return $this->hasMany(Emergencia::class);
-    }
+    //public function emergencias(){
+    //    return $this->hasMany(Emergencia::class);
+    //}
 }

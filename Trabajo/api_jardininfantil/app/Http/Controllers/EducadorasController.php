@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Educadora;
+use App\Models\{Educadora,Rango};
 use Illuminate\Http\Request;
-use App\Http\Requests\EducadorasRequest;
+use App\Http\Requests\{EducadorasRequest,UpEducadorasRequest};
 
 class EducadorasController extends Controller
 {
@@ -24,7 +24,7 @@ class EducadorasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EducadorasRequest $request)
     {
         $educadora = new Educadora();
         $educadora->rut = $request->rut;
@@ -52,7 +52,7 @@ class EducadorasController extends Controller
      * @param  \App\Models\Educadora  $educadora
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Educadora $educadora)
+    public function update(UpEducadorasRequest $request, Educadora $educadora)
     {
         $educadora->rut = $request->rut;
         $educadora->nombre=$request->nombre;
