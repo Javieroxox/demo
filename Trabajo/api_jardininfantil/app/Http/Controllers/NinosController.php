@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Nino;
+use App\Models\{Nino,Rango};
 use Illuminate\Http\Request;
-use App\Http\Requests\NinosRequest;
+use App\Http\Requests\{NinosRequest,UpNinosRequest};
 
 
 class NinosController extends Controller
@@ -30,8 +30,8 @@ class NinosController extends Controller
         $nino = new Nino();
         $nino->rut = $request->rut;
         $nino->nombre = $request->nombre;
-        $nino->apellido=$request->apellido;
-        $nino->id_rango=$request->id_rango;
+        $nino->apellido = $request->apellido;
+        $nino->id_rango = $request->id_rango;
         $nino->save();
     }
 
@@ -53,7 +53,7 @@ class NinosController extends Controller
      * @param  \App\Models\Nino  $nino
      * @return \Illuminate\Http\Response
      */
-    public function update(NinosRequest $request, Nino $nino)
+    public function update(UpNinosRequest $request,Nino $nino)
     {
         $nino->rut = $request->rut;
         $nino->nombre=$request->nombre;

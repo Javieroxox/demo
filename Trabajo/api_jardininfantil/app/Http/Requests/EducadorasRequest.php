@@ -13,7 +13,7 @@ class EducadorasRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -27,7 +27,7 @@ class EducadorasRequest extends FormRequest
             'rut'=>'required|unique:educadoras,rut', //ignore($this->educadoras->rut,'rut'', "aca tambien no funca"
             'nombre'=>'required|alpha',
             'apellido'=>'required|alpha',
-            //'id_rango'=>'required|numeric'
+            'id_rango'=>'required|numeric'
         ];
     }
 
@@ -40,8 +40,8 @@ class EducadorasRequest extends FormRequest
         'nombre.alpha'=>'Ingreso números en el nombre de la educadora',
         'apellido.required'=>'El apellido de la educadora debe ser ingresado',
         'apellido.alpha'=>'Ingreso números en el apellido de la educadora',
-        //'id_rango.required'=>'El rango al que pertenece la educadora debe ser ingresado',
-        //'id_rango.numeric'=>'Ingreso una letra por error'
+        'id_rango.required'=>'El rango al que pertenece la educadora debe ser ingresado',
+        'id_rango.numeric'=>'Ingreso una letra por error'
         ];
     }
 }

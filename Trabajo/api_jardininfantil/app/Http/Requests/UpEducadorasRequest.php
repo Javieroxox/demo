@@ -4,8 +4,9 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\DigitoVerificadorRut;
+use Illuminate\Validation\Rule;
 
-class NinosRequest extends FormRequest
+class UpEducadorasRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,11 +23,10 @@ class NinosRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-
     public function rules()
     {
         return[
-            'rut' => ['bail','required','regex:/^(\d{7,8}-[\dkK])$/',new DigitoVerificadorRut],
+            'rut' => ['bail','required','regex:/^(\d{7,8}-[\dkK])$/',new DigitoVerificadorRut,Rule::unique('educadoras')->ignore($this->educadora->rut,'rut'),],
             'nombre'=>'required|alpha',
             'apellido'=>'required|alpha',
             'id_rango'=>'required|numeric'
