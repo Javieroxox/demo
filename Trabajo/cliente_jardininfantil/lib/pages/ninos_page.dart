@@ -1,4 +1,5 @@
-import 'package:cliente_jardininfantil/pages/providers/ninos_provider.dart';
+
+import 'package:cliente_jardininfantil/providers/ninos_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -16,6 +17,7 @@ class _NinosPageState extends State<NinosPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff774466),
         title: Text('Niños Jardin'),
       ),
       body: Padding(
@@ -30,6 +32,7 @@ class _NinosPageState extends State<NinosPage> {
                     return Center(
                       child: CircularProgressIndicator(),
                     );
+                    //Aqui abajo es donde no esta funcionando
                   }return ListView.separated(
                     separatorBuilder: (_, __) => Divider(),
                     itemCount: snap.data.length,
