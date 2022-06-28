@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(cliente_jardininfatil LANGUAGES CXX)
+project(cliente_jardininfantil LANGUAGES CXX)
 
-set(BINARY_NAME "cliente_jardininfatil")
+set(BINARY_NAME "cliente_jardininfantil")
 
 cmake_policy(SET CMP0063 NEW)
 

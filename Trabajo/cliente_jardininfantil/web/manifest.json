@@ -1,6 +1,6 @@
 {
-    "name": "cliente_jardininfatil",
-    "short_name": "cliente_jardininfatil",
+    "name": "cliente_jardininfantil",
+    "short_name": "cliente_jardininfantil",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

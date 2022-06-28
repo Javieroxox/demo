@@ -1,13 +1,14 @@
 import 'dart:collection';
 import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 
-class NinosProvider {
+class ProductosProvider {
   final String apiURL = 'http://10.0.2.2:8000/api';
 
-  //regresa ninos de la api
-  Future<List<dynamic>> getNinos() async {
-    var uri = Uri.parse('$apiURL/ninos');
+  //retorna lista de productos
+  Future<List<dynamic>> getProductos() async {
+    var uri = Uri.parse('$apiURL/productos');
     var respuesta = await http.get(uri);
 
     if (respuesta.statusCode == 200) {
@@ -16,5 +17,4 @@ class NinosProvider {
       return [];
     }
   }
-
 }

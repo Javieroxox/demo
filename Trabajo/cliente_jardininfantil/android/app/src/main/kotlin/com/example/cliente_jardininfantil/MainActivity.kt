@@ -1,4 +1,4 @@
-package com.example.cliente_jardininfatil
+package com.example.cliente_jardininfantil
 
 import io.flutter.embedding.android.FlutterActivity
 
