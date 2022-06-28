@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('emergencias', function (Blueprint $table) {
             $table->id();             
             $table->string('descripcion');
-            $table->date('fecha');
+            $table->datetime('fecha');
             $table->string('rut_niño');
 			$table->foreign('rut_niño')->references('rut')->on('ninos');
 			$table->softDeletes();
