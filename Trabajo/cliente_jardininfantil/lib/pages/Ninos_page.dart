@@ -40,56 +40,7 @@ class _NinosPagesState extends State<NinosPages> {
                           leading: Icon(MdiIcons.cube),
                           title: Text('[${infante['nombre']}] + ' ' + ${infante['apellido']}'),
                           subtitle: Text('Rut: ${infante['Rut']}'),
-                          trailing: Text('\$${fPrecio.format(prod['precio'])}'),
-                        ),
-                        startActionPane: ActionPane(
-                          motion: ScrollMotion(),
-                          children: [
-                            SlidableAction(
-                              onPressed: (context) {
-                                MaterialPageRoute route = MaterialPageRoute(
-                                  builder: (context) => ProductosEditarPage(prod['cod_producto']),
-                                );
-                                Navigator.push(context, route).then((value) {
-                                  setState(() {});
-                                });
-                              },
-                              backgroundColor: Colors.purple,
-                              icon: MdiIcons.pen,
-                              label: 'Editar',
-                            ),
-                          ],
-                        ),
-                        endActionPane: ActionPane(
-                          motion: ScrollMotion(),
-                          children: [
-                            SlidableAction(
-                              onPressed: (context) {
-                                String cod_producto = prod['cod_producto'];
-                                String nombre = prod['nombre'];
-
-                                confirmDialog(context, nombre).then((confirma) {
-                                  if (confirma) {
-                                    //borrar
-                                    ProductosProvider().productosBorrar(cod_producto).then((borradoOk) {
-                                      if (borradoOk) {
-                                        //pudo borrar
-                                        snap.data.removeAt(index);
-                                        setState(() {});
-                                        showSnackbar('Producto $nombre borrado');
-                                      } else {
-                                        //no pudo borrar
-                                        showSnackbar('No se pudo borrar el producto');
-                                      }
-                                    });
-                                  }
-                                });
-                              },
-                              backgroundColor: Colors.red,
-                              icon: MdiIcons.trashCan,
-                              label: 'Borrar',
-                            ),
-                          ],
+                          trailing: Text(''),
                         ),
                       );
                     },
