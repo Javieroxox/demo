@@ -1,4 +1,4 @@
-name: cliente_jardininfatil
+name: cliente_jardininfantil
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -34,8 +34,6 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  intl: ^0.17.0
-  material_design_icons_flutter: ^5.0.6595
 
 dev_dependencies:
   flutter_test:

@@ -1,4 +1,4 @@
-import 'package:cliente_jardininfatil/pages/home_page.dart';
+import 'package:cliente_jardininfantil/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
