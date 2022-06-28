@@ -35,7 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   material_design_icons_flutter: ^5.0.6595
-  html: ^0.15.0
+  html: ^0.15.0 #"existe"
   intl: ^0.17.0
   flutter_slidable: ^1.3.0
   http: ^0.13.4
