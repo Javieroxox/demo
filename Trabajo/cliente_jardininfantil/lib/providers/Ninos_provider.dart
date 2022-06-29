@@ -17,4 +17,11 @@ class NinosProvider {
     }
   }
 
+  //deveria borrar a los niños
+  Future<bool> ninosBorrar(String rut) async {
+    var uri = Uri.parse('$apiURL/ninos/$rut');
+    var respuesta = await http.delete(uri);
+    return respuesta.statusCode == 200;
+  }
+
 }

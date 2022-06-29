@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
-import '../providers/Ninos_provider.dart';
+import '../providers/ninos_provider.dart';
+import '../widget/snackBar.dart';
 
 class NinosPages extends StatefulWidget {
 
@@ -37,59 +38,10 @@ class _NinosPagesState extends State<NinosPages> {
                       var infante = snap.data[index];
                       return Slidable(
                         child: ListTile(
-                          leading: Icon(MdiIcons.cube),
-                          title: Text('[${infante['nombre']}] + ' ' + ${infante['apellido']}'),
-                          subtitle: Text('Rut: ${infante['Rut']}'),
-                          trailing: Text('\$${fPrecio.format(prod['precio'])}'),
-                        ),
-                        startActionPane: ActionPane(
-                          motion: ScrollMotion(),
-                          children: [
-                            SlidableAction(
-                              onPressed: (context) {
-                                MaterialPageRoute route = MaterialPageRoute(
-                                  builder: (context) => ProductosEditarPage(prod['cod_producto']),
-                                );
-                                Navigator.push(context, route).then((value) {
-                                  setState(() {});
-                                });
-                              },
-                              backgroundColor: Colors.purple,
-                              icon: MdiIcons.pen,
-                              label: 'Editar',
-                            ),
-                          ],
-                        ),
-                        endActionPane: ActionPane(
-                          motion: ScrollMotion(),
-                          children: [
-                            SlidableAction(
-                              onPressed: (context) {
-                                String cod_producto = prod['cod_producto'];
-                                String nombre = prod['nombre'];
-
-                                confirmDialog(context, nombre).then((confirma) {
-                                  if (confirma) {
-                                    //borrar
-                                    ProductosProvider().productosBorrar(cod_producto).then((borradoOk) {
-                                      if (borradoOk) {
-                                        //pudo borrar
-                                        snap.data.removeAt(index);
-                                        setState(() {});
-                                        showSnackbar('Producto $nombre borrado');
-                                      } else {
-                                        //no pudo borrar
-                                        showSnackbar('No se pudo borrar el producto');
-                                      }
-                                    });
-                                  }
-                                });
-                              },
-                              backgroundColor: Colors.red,
-                              icon: MdiIcons.trashCan,
-                              label: 'Borrar',
-                            ),
-                          ],
+                          leading: Icon(MdiIcons.cube, color: Colors.red[200],),
+                          title: Text('${infante['nombre']} ${infante['apellido']}'),
+                          subtitle: Text('Rut: ${infante['rut']}'),
+                          trailing: Snack_bar(infante['rut']),
                         ),
                       );
                     },
