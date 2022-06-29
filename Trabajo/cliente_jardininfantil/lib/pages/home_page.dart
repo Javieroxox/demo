@@ -13,6 +13,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff774466),
         title: Text('Jardin Infantil'),
       ),
       body: Center(
