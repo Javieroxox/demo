@@ -32,7 +32,6 @@ class NinosController extends Controller
         $nino->nombre = $request->nombre;
         $nino->apellido = $request->apellido;
         $nino->id_rango = $request->id_rango;
-        $jugador->imagen = $request->imagen->store('public/img');
         $nino->save();
     }
 
@@ -60,10 +59,6 @@ class NinosController extends Controller
         $nino->nombre=$request->nombre;
         $nino->apellido=$request->apellido;
         $nino->id_rango=$request->id_rango;
-        if(isset($request->imagen)){
-            Storage::delete($nino->imagen);
-            $nino->imagen = $request->imagen->store('public/img');
-        }
         $nino->save();
         return $nino;
     }
