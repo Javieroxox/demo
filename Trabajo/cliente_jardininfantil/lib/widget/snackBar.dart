@@ -26,7 +26,6 @@ class Snack_bar extends StatelessWidget {
               label: 'Eliminar',
               onPressed: () {
                 NinosProvider().ninosBorrar(rut);
-                setState(){};
               },
             ),
             content: const Text('¿Decea eliminarlo?'),
