@@ -1,3 +1,4 @@
+import 'package:cliente_jardininfantil/pages/ninos_agregar_page.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -16,7 +17,19 @@ class _NinosPagesState extends State<NinosPages> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:AppBar(
+        leading: ElevatedButton(
+                child: Icon(MdiIcons.idCard),
+                onPressed: () {
+                  MaterialPageRoute route = MaterialPageRoute(builder: (context) {
+                    return NinosAgregarPage();
+                  });
+                  Navigator.push(context, route).then((value) {
+                    setState(() {});
+                  });
+                },
+              ),
         title: Text('Infantes'),
+        backgroundColor: Colors.deepPurple,
       ),
       body: Padding(
         padding: EdgeInsets.all(5),

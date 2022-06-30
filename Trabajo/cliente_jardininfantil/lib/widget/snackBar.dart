@@ -14,6 +14,7 @@ class Snack_bar extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
+              padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
               onPrimary:Colors.black,
               primary: Colors.red,
             ),
@@ -25,12 +26,13 @@ class Snack_bar extends StatelessWidget {
               label: 'Eliminar',
               onPressed: () {
                 NinosProvider().ninosBorrar(rut);
+                setState(){};
               },
             ),
             content: const Text('¿Decea eliminarlo?'),
             duration: const Duration(milliseconds: 3000),
             width: 280.0, // Width of the SnackBar.
-            padding: const EdgeInsets.symmetric(
+            padding: EdgeInsets.symmetric(
               horizontal: 8.0, // Inner padding for SnackBar content.
             ),
             behavior: SnackBarBehavior.floating,

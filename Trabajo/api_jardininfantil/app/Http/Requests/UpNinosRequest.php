@@ -38,6 +38,7 @@ class UpNinosRequest extends FormRequest
     {   return [
         'rut.required' => 'El rut del infante debe ser ingresado',
         'rut.regex' => 'Indique RUT sin puntos, con guión y con dígito verificador',
+        'rut.unique' => 'Deve ser unico',
         'nombre.required'=>'El nombre del infante debe ser ingresado',
         'nombre.alpha'=>'Ingreso números en el nombre del infante',
         'apellido.required'=>'El apellido del infante debe ser ingresado',

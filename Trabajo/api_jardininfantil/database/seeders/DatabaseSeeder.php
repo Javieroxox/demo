@@ -71,7 +71,6 @@ class DatabaseSeeder extends Seeder
                 'nombre' => $nino['nombre'],
                 'apellido' => $nino['apellido'],
                 'id_rango' => $nino['id_rango'],
-                'imagen' => null,
             ]);
         }
 
