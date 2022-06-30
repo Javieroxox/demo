@@ -1,6 +1,5 @@
 import 'dart:collection';
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 
 class NinosProvider {
@@ -8,7 +7,7 @@ class NinosProvider {
 
   
   Future<List<dynamic>> getNinos() async {
-    var uri = Uri.parse('$apiURL/jardin');
+    var uri = Uri.parse('$apiURL/ninos');
     var respuesta = await http.get(uri);
 
     if (respuesta.statusCode == 200) {

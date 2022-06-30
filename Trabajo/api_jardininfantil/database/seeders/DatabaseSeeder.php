@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
 
         //ninos
         $ninos = [
-            ['rut'=>'19612159-5','nombre'=>'Pedro','apellido'=>'Reyes','id_rango'=>'4'], //'imagen' => 'img/default_usuario.png'
+            ['rut'=>'19612159-5','nombre'=>'Pedro','apellido'=>'Reyes','id_rango'=>'4'], //'imagen' => asset('img/default_usuario.png')
             ['rut'=>'6528305-0','nombre'=>'Claudio','apellido'=>'Rojas','id_rango'=>'1'],
             ['rut'=>'22906905-5','nombre'=>'Felipe','apellido'=>'Carmen','id_rango'=>'3'],
             ['rut'=>'24997935-k','nombre'=>'Carlos','apellido'=>'Pulgar','id_rango'=>'6'],
@@ -71,7 +71,6 @@ class DatabaseSeeder extends Seeder
                 'nombre' => $nino['nombre'],
                 'apellido' => $nino['apellido'],
                 'id_rango' => $nino['id_rango'],
-                'imagen' => null,
             ]);
         }
 
