@@ -1,6 +1,8 @@
-import 'package:cliente_jardininfantil/providers/ninos_provider.dart';
+import 'package:cliente_jardininfantil/pages/providers/ninos_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+
+
 
 class NinosPage extends StatefulWidget {
   NinosPage({Key? key}) : super(key: key);
@@ -33,10 +35,13 @@ class _NinosPageState extends State<NinosPage> {
                     itemCount: snap.data.length,
                     itemBuilder: (context, index){
                       var ninos = snap.data[index];
-                      return ListTile(
+                      return Row(
+                        children: [
+                          ListTile(
                             leading: Icon(MdiIcons.peanut),
-                            title: Text('${ninos['nombre']} ${ninos['apellido']}'),
-                            subtitle: Text('${ninos['rut']}'),
+                            title: Text('[${ninos['rut']}] ${ninos['nombre']}'),
+                          ),
+                        ],
                       );
                     },
                   );

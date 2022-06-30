@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nombre');
 			$table->string('apellido');
 			$table->unsignedBigInteger('id_rango');
+            $table->string('imagen');
 			$table->foreign('id_rango')->references('id')->on('rangos');
 			$table->softDeletes();
         });
