@@ -29,7 +29,6 @@ class NinosRequest extends FormRequest
             'rut' => ['bail','required','regex:/^(\d{7,8}-[\dkK])$/',new DigitoVerificadorRut],
             'nombre'=>'required|alpha',
             'apellido'=>'required|alpha',
-            'id_rango'=>'required|numeric'
             ];
     }
 
@@ -41,8 +40,6 @@ class NinosRequest extends FormRequest
         'nombre.alpha'=>'Ingreso números en el nombre del infante',
         'apellido.required'=>'El apellido del infante debe ser ingresado',
         'apellido.alpha'=>'Ingreso números en el apellido del infante',
-        'id_rango.required'=>'El rango escolar del infante debe ser ingresado',
-        'id_rango.numeric'=>'Ingreso una letra por error'
         ];
     }
 }

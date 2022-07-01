@@ -1,6 +1,17 @@
 import 'package:cliente_jardininfantil/providers/rangos_provider.dart';
 import 'package:flutter/material.dart';
 
+/* final List<String> countries = [
+  'United Kingdom',
+  'USA',
+  'Frances',
+  'Australia',
+  'Germany',
+  'India',
+  'Vietnam'
+]; */
+
+
 final List<String> countries = <String>[];
 
 /* final List<String> rang = rang['nombre']; */
@@ -38,7 +49,7 @@ class _dataState extends State<data> {
                   var rang = snap.data[index];
                   for (var i = 0; i < 5; i++) {
                     countries.insert(i,rang['nombre']);
-                    Text(countries[i]);
+                    print(countries[i]);
                   }
                   return Text('listo');
                 },

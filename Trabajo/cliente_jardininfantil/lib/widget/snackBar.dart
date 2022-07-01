@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import '../providers/ninos_provider.dart';
 
-//void main() => runApp(MyApp());
-
+//void main() => runApp(Snack_bar()); este me lo sabia un poco
 
 class Snack_bar extends StatelessWidget {
 
@@ -25,7 +24,7 @@ class Snack_bar extends StatelessWidget {
             action: SnackBarAction(
               label: 'Eliminar',
               onPressed: () {
-                NinosProvider().ninosBorrar(rut);
+                NinosProvider().deleteNinos(rut);
               },
             ),
             content: const Text('¿Decea eliminarlo?'),

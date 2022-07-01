@@ -1,20 +1,19 @@
 import 'package:cliente_jardininfantil/pages/ninos_agregar_page.dart';
+import 'package:cliente_jardininfantil/providers/educadoras__provider.dart';
 import 'package:cliente_jardininfantil/providers/rangos_provider.dart';
-import 'package:cliente_jardininfantil/widget/Popup_Menu_Button.dart';
+import 'package:cliente_jardininfantil/widget/popup_menu_button.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-
-import '../providers/ninos_provider.dart';
 import '../widget/snackBar.dart';
 
-class NinosPages extends StatefulWidget {
+class EducadorasPages extends StatefulWidget {
 
   @override
-  State<NinosPages> createState() => _NinosPagesState();
+  State<EducadorasPages> createState() => _EducadorasPagesState();
 }
 
-class _NinosPagesState extends State<NinosPages> {
+class _EducadorasPagesState extends State<EducadorasPages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +33,7 @@ class _NinosPagesState extends State<NinosPages> {
             });
           },
         ),
-        title: Text('Infantes'),
+        title: Text('Profesoras'),
         actions:[Popup_Menu_Button()],
         backgroundColor: Colors.deepPurple,
       ),
@@ -44,7 +43,7 @@ class _NinosPagesState extends State<NinosPages> {
           children: [
             Expanded(
               child: FutureBuilder(
-                future: NinosProvider().getNinos(),
+                future: EducadorasProvider().getEducadoras(),
                 builder: (context, AsyncSnapshot snap) {
                   if (!snap.hasData) {
                     return Center(
@@ -55,13 +54,13 @@ class _NinosPagesState extends State<NinosPages> {
                     separatorBuilder: (_, __) => Divider(),
                     itemCount: snap.data.length,
                     itemBuilder: (context, index) {
-                      var infante = snap.data[index];
+                      var Profesoras = snap.data[index];
                       return Slidable(
                         child: ListTile(
                           leading: Icon(MdiIcons.cube, color: Colors.red[200],),
-                          title: Text('${infante['nombre']} ${infante['apellido']}'),
-                          subtitle: Text('Rut: ${infante['rut']}'),
-                          trailing: Snack_bar(infante['rut']),
+                          title: Text('${Profesoras['nombre']} ${Profesoras['apellido']}'),
+                          subtitle: Text('Rut: ${Profesoras['rut']}'),
+                          trailing: Snack_bar(Profesoras['rut']),
                         ),
                       );
                     },

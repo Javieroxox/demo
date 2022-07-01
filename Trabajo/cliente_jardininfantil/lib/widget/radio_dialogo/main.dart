@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 
 import 'notifiers.dart';
 
+//aun no lo puedo hacer correr y es uno de los mas bonitos
+
 void main() {
   runApp(MultiProvider(
     providers: [

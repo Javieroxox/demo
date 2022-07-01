@@ -1,14 +1,14 @@
-import 'package:cliente_jardininfantil/providers/ninos_provider.dart';
+import 'package:cliente_jardininfantil/providers/educadoras__provider.dart';
 import 'package:flutter/material.dart';
 
-class NinosAgregarPage extends StatefulWidget {
-  NinosAgregarPage({Key? key}) : super(key: key);
+class EducadorasAgregarPage extends StatefulWidget {
+  EducadorasAgregarPage({Key? key}) : super(key: key);
 
   @override
-  State<NinosAgregarPage> createState() => _NinosAgregarPageState();
+  State<EducadorasAgregarPage> createState() => _EducadorasAgregarPageState();
 }
 
-class _NinosAgregarPageState extends State<NinosAgregarPage> {
+class _EducadorasAgregarPageState extends State<EducadorasAgregarPage> {
   final formKey = GlobalKey<FormState>();
   TextEditingController rutCtrl = TextEditingController();
   TextEditingController nombreCtrl = TextEditingController();
@@ -24,7 +24,7 @@ class _NinosAgregarPageState extends State<NinosAgregarPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Nuevo Infante'),
+        title: Text('Nuevo Profesor'),
         backgroundColor: Colors.deepPurple,
       ),
       body: Form(
@@ -78,10 +78,10 @@ class _NinosAgregarPageState extends State<NinosAgregarPage> {
                     onPrimary:Colors.white,
                     primary: Colors.deepPurple,
                   ),  
-                  child: Text('Agregar Infante'),
+                  child: Text('Agregar Profesor'),
                   onPressed: () async {
                     int Id_rango = int.tryParse(Id_rangoCtrl.text) ?? 0;
-                    var respuesta = await NinosProvider().postNino(
+                    var respuesta = await EducadorasProvider().postEducadora(
                       rutCtrl.text.trim(),
                       nombreCtrl.text.trim(),
                       apellidoCtrl.text.trim(),

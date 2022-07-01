@@ -1,15 +1,15 @@
-import 'package:cliente_jardininfantil/providers/ninos_provider.dart';
+import 'package:cliente_jardininfantil/providers/educadoras__provider.dart';
 import 'package:flutter/material.dart';
 
-class NinosEditPages extends StatefulWidget {
+class EducadorasEditPages extends StatefulWidget {
   String rut;
-  NinosEditPages(this.rut, {Key? key}) : super(key: key);
+  EducadorasEditPages(this.rut, {Key? key}) : super(key: key);
 
   @override
-  State<NinosEditPages> createState() => _NinosEditPagesState();
+  State<EducadorasEditPages> createState() => _EducadorasEditPagesState();
 }
 
-class _NinosEditPagesState extends State<NinosEditPages> {
+class _EducadorasEditPagesState extends State<EducadorasEditPages> {
   TextEditingController rutCtrl = TextEditingController();
   TextEditingController nombreCtrl = TextEditingController();
   TextEditingController apellidoCtrl = TextEditingController();
@@ -34,11 +34,11 @@ class _NinosEditPagesState extends State<NinosEditPages> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Editar Infante'),
+        title: Text('Editar Educadora'),
         backgroundColor: Colors.deepPurple,
       ),
       body: FutureBuilder(
-          future: NinosProvider().getNino(widget.rut),
+          future: EducadorasProvider().getEducadora(widget.rut),
           builder: (context, AsyncSnapshot snapshot) {
             if (!snapshot.hasData) {
               return Center(
@@ -81,7 +81,7 @@ class _NinosEditPagesState extends State<NinosEditPages> {
                       ),
                       child: Text('Editar'),
                       onPressed: () {
-                        NinosProvider().putNino(
+                        EducadorasProvider().putEducadora(
                           widget.rut,
                           rutCtrl.text.trim(),
                           nombreCtrl.text.trim(),
