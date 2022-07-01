@@ -12,7 +12,7 @@ class _NinosAgregarPageState extends State<NinosAgregarPage> {
   final formKey = GlobalKey<FormState>();
   TextEditingController rutCtrl = TextEditingController();
   TextEditingController nombreCtrl = TextEditingController();
-  TextEditingController ApellidoCtrl = TextEditingController();
+  TextEditingController apellidoCtrl = TextEditingController();
   TextEditingController Id_rangoCtrl = TextEditingController();
 
   String errRut = '';
@@ -24,7 +24,8 @@ class _NinosAgregarPageState extends State<NinosAgregarPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Infante'),
+        title: Text('Nuevo Infante'),
+        backgroundColor: Colors.deepPurple,
       ),
       body: Form(
         key: formKey,
@@ -55,7 +56,7 @@ class _NinosAgregarPageState extends State<NinosAgregarPage> {
                 ),
               ),
               TextFormField(
-                controller: ApellidoCtrl,
+                controller: apellidoCtrl,
                 decoration: InputDecoration(labelText: 'Apellido'),
               ),
               Container(
@@ -67,20 +68,24 @@ class _NinosAgregarPageState extends State<NinosAgregarPage> {
               ),
               TextFormField(
                 controller: Id_rangoCtrl,
-                decoration: InputDecoration(labelText: 'Id_rango'),
+                decoration: InputDecoration(labelText: 'Rango'),
                 keyboardType: TextInputType.number,
               ),
               Container(
                 width: double.infinity,
                 child: ElevatedButton(
-                  child: Text('Agregar Producto'),
+                  style: ElevatedButton.styleFrom(
+                    onPrimary:Colors.white,
+                    primary: Colors.deepPurple,
+                  ),  
+                  child: Text('Agregar Infante'),
                   onPressed: () async {
-
-                    var respuesta = await NinosProvider().postNinos(
+                    int Id_rango = int.tryParse(Id_rangoCtrl.text) ?? 0;
+                    var respuesta = await NinosProvider().postNino(
                       rutCtrl.text.trim(),
                       nombreCtrl.text.trim(),
-                      ApellidoCtrl.text.trim(),
-                      Id_rangoCtrl,
+                      apellidoCtrl.text.trim(),
+                      Id_rango,
                     );
 
                     if (respuesta['message'] != null) {

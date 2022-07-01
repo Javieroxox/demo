@@ -17,8 +17,8 @@ class RangosProvider {
     }
   }
 
-  //agregar niños
-  Future<LinkedHashMap<String, dynamic>> postNinos(
+  //agregar rangos
+  Future<LinkedHashMap<String, dynamic>> postRangos(
       String nombre) async {
     var uri = Uri.parse('$apiURL/rangos');
     var respuesta = await http.post(uri,
@@ -29,7 +29,7 @@ class RangosProvider {
     return json.decode(respuesta.body);
   }
 
-  //deveria borrar a los niños
+  //deveria borrar a los rangos
   Future<bool> ninosBorrar(int id) async {
     var uri = Uri.parse('$apiURL/rangos/$id');
     var respuesta = await http.delete(uri);
