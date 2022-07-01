@@ -1,3 +1,4 @@
+import 'package:cliente_jardininfantil/pages/educadoras_page.dart';
 import 'package:cliente_jardininfantil/pages/ninos_page.dart';
 import 'package:flutter/material.dart';
 
@@ -26,14 +27,22 @@ class _HomePageState extends State<HomePage> {
                   });
 
                   Navigator.push(context, route).then((value) {
-                    print('ACTUALIZAR PAGINA');
                     setState(() {});
                   });
               }, 
               child: Text('Niños'),
             ),
             ElevatedButton(
-              onPressed: (){}, 
+              onPressed: (){
+                MaterialPageRoute route = MaterialPageRoute(builder: (context){
+                  return EducadorasPage();
+                });
+
+                Navigator.push(context, route).then((value){
+                  setState(() {});
+                });
+
+              }, 
               child: Text('Educadoras'),
             ),
             ElevatedButton(

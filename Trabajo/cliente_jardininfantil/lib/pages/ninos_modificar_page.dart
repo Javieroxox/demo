@@ -46,12 +46,21 @@ class _NinosModificarPageState extends State<NinosModificarPage> {
                     campoRut(),
                     campoNombre(),
                     campoApellido(),
+                    // Column(
+                    //   children: [
+                    //     ElevatedButton(
+                    //       onPressed: (){
+                    //         NinosProvider().ninosBorrar(data.rut);
+                    //       }, 
+                    //       child: Text('Borrar'),)
+                    //   ],
+                    // )
                   ],
                 ),
               ),
             );
         },
-      )
+      ),
     );
   }
 

@@ -1,33 +1,30 @@
-import 'package:cliente_jardininfantil/pages/ninos_agregar_page.dart';
 import 'package:cliente_jardininfantil/pages/ninos_modificar_page.dart';
-import 'package:cliente_jardininfantil/providers/ninos_provider.dart';
+import 'package:cliente_jardininfantil/providers/educadoras_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-class NinosPage extends StatefulWidget {
-  NinosPage({Key? key}) : super(key: key);
+class EducadorasPage extends StatefulWidget {
+  EducadorasPage({Key? key}) : super(key: key);
 
   @override
-  State<NinosPage> createState() => _NinosPageState();
+  State<EducadorasPage> createState() => _EducadorasPageState();
 }
 
-class _NinosPageState extends State<NinosPage> {
-  int _selectedIndex = 0;
-  
+class _EducadorasPageState extends State<EducadorasPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xff774466),
-        title: Text('Niños Jardin'),
+        title: Text('Educadoras Jardin'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(0),
+        padding: EdgeInsets.all(5.0),
         child: Column(
           children: [
             Expanded(
               child: FutureBuilder(
-                future: NinosProvider().getNinos(),
+                future: EducadorasProvider().getEducadoras(),
                 builder: (context, AsyncSnapshot snap){
                   if(!snap.hasData){
                     return Center(
@@ -37,34 +34,28 @@ class _NinosPageState extends State<NinosPage> {
                     separatorBuilder: (_, __) => Divider(),
                     itemCount: snap.data.length,
                     itemBuilder: (context, index){
-                      var ninos = snap.data[index];
+                      var educadoras = snap.data[index];
                       return ListTile(
                             leading: Icon(MdiIcons.peanut),
-                            title: Text('${ninos['nombre']} ${ninos['apellido']}'),
-                            subtitle: Text('${ninos['rut']}'),
+                            title: Text('${educadoras['nombre']} ${educadoras['apellido']}'),
+                            subtitle: Text('${educadoras['rut']}'),
                             trailing: Column(
                               children: [
                                 ElevatedButton(
                                   onPressed: (){
                                     MaterialPageRoute route = MaterialPageRoute(builder: (context){
-                                      return NinosModificarPage(ninos['rut']);
+                                      return NinosModificarPage(educadoras['rut']);
                                     });
                                     Navigator.push(context, route).then((value){
                                       setState(() {});
                                     });
                                   }, 
-                                  child: Text('Modificar Niño')),
+                                  child: Text('Modificar Educadora')),
                                 ElevatedButton(
                                   onPressed: (){
-                                    NinosProvider().ninosBorrar(ninos.rut);
-                                    // MaterialPageRoute route = MaterialPageRoute(builder: (context){
-                                    //   return NinosAgregarPage();
-                                    // });
-                                    // Navigator.push(context, route).then((value){
-                                    //   setState(() {});
-                                    // });
+                                    EducadorasProvider().educadorasBorrar(educadoras.rut);
                                   }, 
-                                  child: Text('Borrar Niño')),
+                                  child: Text('Borrar Educadora')),
                               ],
                             ),
                             // onTap: (){
@@ -84,13 +75,6 @@ class _NinosPageState extends State<NinosPage> {
                       );
                     },
                   );
-                  // }return Slidable(
-                  //       child: ListTile(
-                  //         leading: Icon(MdiIcons.cube),
-                  //         title: Text('[${prod['cod_producto']}] ${prod['nombre']}'),
-                  //         subtitle: Text('Stock: ${prod['stock']}'),
-                  //         trailing: Text('\$${fPrecio.format(prod['precio'])}'),
-                  //       ),
                 },
               ),
             ),
@@ -101,7 +85,7 @@ class _NinosPageState extends State<NinosPage> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(MdiIcons.upload),
-            label: 'Agregar Niños',
+            label: 'Agregar Educadoras',
             backgroundColor: Colors.greenAccent,
           ),
           BottomNavigationBarItem(

@@ -2,12 +2,11 @@ import 'dart:collection';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-class NinosProvider {
+class EducadorasProvider {
   final String apiURL = 'http://10.0.2.2:8000/api';
-
-  
-  Future<List<dynamic>> getNinos() async {
-    var uri = Uri.parse('$apiURL/ninos');
+//Obtencion +1
+  Future<List<dynamic>> getEducadoras() async {
+    var uri = Uri.parse('$apiURL/educadoras');
     var respuesta = await http.get(uri);
 
     if (respuesta.statusCode == 200) {
@@ -16,9 +15,9 @@ class NinosProvider {
       return [];
     }
   }
-
-  Future<LinkedHashMap<String, dynamic>> getNino(String rut) async {
-    var uri = Uri.parse('$apiURL/jardin/ninos/$rut');
+//Obtencion 1
+Future<LinkedHashMap<String, dynamic>> getEducadora(String rut) async {
+    var uri = Uri.parse('$apiURL/jardin/educadoras/$rut');
     var respuesta = await http.get(uri);
 
     if (respuesta.statusCode == 200) {
@@ -28,8 +27,9 @@ class NinosProvider {
     }
   }
 
-  Future<bool> ninosBorrar(String rut) async {
-    var uri = Uri.parse('$apiURL/jardin/ninos/$rut');
+//Eliminado
+  Future<bool> educadorasBorrar(String rut) async {
+    var uri = Uri.parse('$apiURL/jardin/educadoras/$rut');
     var respuesta = await http.delete(uri);
     return respuesta.statusCode == 200;
   }
