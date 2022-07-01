@@ -27,6 +27,17 @@ Future<LinkedHashMap<String, dynamic>> getEducadora(String rut) async {
     }
   }
 
+  Future<LinkedHashMap<String, dynamic>> educadorasAgregar(
+    String rut, String nombre, String apellido) async {
+    var uri = Uri.parse('$apiURL/jardin/educadoras');
+    var respuesta = await http.post(uri,
+        headers: <String, String>{'Content-Type': 'application/json; charset=UTF-8', 'Accept': 'application/json'},
+        body: jsonEncode(
+            <String, dynamic>{'rut': rut, 'nombre': nombre, 'apellido': apellido}));
+
+    return json.decode(respuesta.body);
+  }
+
 //Eliminado
   Future<bool> educadorasBorrar(String rut) async {
     var uri = Uri.parse('$apiURL/jardin/educadoras/$rut');

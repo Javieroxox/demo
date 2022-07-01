@@ -27,6 +27,12 @@ class _EducadorasAgregarPageState extends State<EducadorasAgregarPage> {
               campoRut(),
               campoNombre(),
               campoApellido(),
+              Center(
+                child: ElevatedButton(
+                  child: Text('Agregar Educadora'),
+                  onPressed: (){},
+                  ),
+              )
             ],
           ),
         ) 

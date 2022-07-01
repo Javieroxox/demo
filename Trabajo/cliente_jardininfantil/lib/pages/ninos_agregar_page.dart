@@ -29,6 +29,12 @@ class _NinosAgregarPageState extends State<NinosAgregarPage> {
               campoRut(),
               campoNombre(),
               campoApellido(),
+              Center(
+                child: ElevatedButton(
+                  child: Text('Agregar Niño'),
+                  onPressed: (){},
+                  ),
+              )
             ],
           ),
         ) 
