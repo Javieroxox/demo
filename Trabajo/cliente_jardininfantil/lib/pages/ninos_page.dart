@@ -47,14 +47,13 @@ class _NinosPageState extends State<NinosPage> {
                                 ElevatedButton(
                                   onPressed: (){
                                     MaterialPageRoute route = MaterialPageRoute(builder: (context){
-                                      return NinosModificarPage();
+                                      return NinosModificarPage(ninos['rut']);
                                     });
                                     Navigator.push(context, route).then((value){
                                       setState(() {});
                                     });
                                   }, 
                                   child: Text('Modificar Niños')),
-                                Divider(),
                                 ElevatedButton(
                                   onPressed: (){
                                     MaterialPageRoute route = MaterialPageRoute(builder: (context){
@@ -64,7 +63,7 @@ class _NinosPageState extends State<NinosPage> {
                                       setState(() {});
                                     });
                                   }, 
-                                  child: Text('Agregar Niños')),
+                                  child: Text('Borrar Niños')),
                               ],
                             ),
                             // onTap: (){

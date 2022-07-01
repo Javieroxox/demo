@@ -16,4 +16,15 @@ class NinosProvider {
       return [];
     }
   }
+
+    Future<LinkedHashMap<String, dynamic>> getNino(String rut) async {
+    var uri = Uri.parse('$apiURL/jardin/$rut');
+    var respuesta = await http.get(uri);
+
+    if (respuesta.statusCode == 200) {
+      return json.decode(respuesta.body);
+    } else {
+      return new LinkedHashMap();
+    }
+  }
 }
